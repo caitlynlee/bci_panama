@@ -1,29 +1,24 @@
 //
-//  resultsViewController.swift
+//  testViewController.swift
 //  katydidID
 //
-//  Created by Caitlyn Lee on 1/2/18.
+//  Created by Caitlyn Lee on 1/3/18.
 //  Copyright © 2018 Caitlyn Lee. All rights reserved.
 //
 
 import UIKit
 
-class resultsViewController: UIViewController {
-    var intPassed = Int()
+class testViewController: UIViewController {
+
+    @IBOutlet weak var resultsField: UITextView!
+    
     var text: String = ""
-    //MARK: Properties
-    
-    @IBAction func backButton(_ sender: UIBarButtonItem) {
-    }
-    @IBOutlet weak var resultsLabel: UILabel!
-    @IBAction func startOverButton(_ sender: Any) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        resultsField.text = text
         
-        resultsLabel.text = text
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +26,7 @@ class resultsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6893B4DD1FFDB7980059A777 /* Katydid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6893B4DC1FFDB7980059A777 /* Katydid.swift */; };
 		68AA24531FFBF10A0009B001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24521FFBF10A0009B001 /* AppDelegate.swift */; };
 		68AA24581FFBF10A0009B001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AA24561FFBF10A0009B001 /* Main.storyboard */; };
 		68AA245A1FFBF10A0009B001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68AA24591FFBF10A0009B001 /* Assets.xcassets */; };
@@ -15,6 +16,11 @@
 		68AA24731FFBF1950009B001 /* AttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24721FFBF1950009B001 /* AttributeTableViewCell.swift */; };
 		68AA24751FFC01950009B001 /* AttributeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24741FFC01950009B001 /* AttributeTableViewController.swift */; };
 		68AA24771FFC02550009B001 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24761FFC02540009B001 /* Attribute.swift */; };
+		68E140181FFD2EEE0082FF92 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E140161FFD2EEE0082FF92 /* testViewController.swift */; };
+		68E140191FFD2EEE0082FF92 /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E140171FFD2EEE0082FF92 /* testViewController.xib */; };
+		68E140561FFD34BC0082FF92 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E140541FFD34BC0082FF92 /* homeViewController.swift */; };
+		68E140571FFD34BC0082FF92 /* homeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E140551FFD34BC0082FF92 /* homeViewController.xib */; };
+		68E140591FFD35F60082FF92 /* AttributeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E140581FFD35F60082FF92 /* AttributeTableViewController.xib */; };
 		68F3944A1FFC8002005675CE /* resultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F394491FFC8002005675CE /* resultsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6893B4DC1FFDB7980059A777 /* Katydid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Katydid.swift; sourceTree = "<group>"; };
 		68AA244F1FFBF10A0009B001 /* katydidID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = katydidID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AA24521FFBF10A0009B001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68AA24571FFBF10A0009B001 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +48,11 @@
 		68AA24721FFBF1950009B001 /* AttributeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewCell.swift; sourceTree = "<group>"; };
 		68AA24741FFC01950009B001 /* AttributeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewController.swift; sourceTree = "<group>"; };
 		68AA24761FFC02540009B001 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		68E140161FFD2EEE0082FF92 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		68E140171FFD2EEE0082FF92 /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
+		68E140541FFD34BC0082FF92 /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		68E140551FFD34BC0082FF92 /* homeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeViewController.xib; sourceTree = "<group>"; };
+		68E140581FFD35F60082FF92 /* AttributeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeTableViewController.xib; sourceTree = "<group>"; };
 		68F394491FFC8002005675CE /* resultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,12 +96,18 @@
 			isa = PBXGroup;
 			children = (
 				68AA24521FFBF10A0009B001 /* AppDelegate.swift */,
-				68AA24741FFC01950009B001 /* AttributeTableViewController.swift */,
 				68AA24761FFC02540009B001 /* Attribute.swift */,
 				68AA24721FFBF1950009B001 /* AttributeTableViewCell.swift */,
+				68AA24741FFC01950009B001 /* AttributeTableViewController.swift */,
+				6893B4DC1FFDB7980059A777 /* Katydid.swift */,
+				68E140581FFD35F60082FF92 /* AttributeTableViewController.xib */,
 				68AA24561FFBF10A0009B001 /* Main.storyboard */,
-				68F394491FFC8002005675CE /* resultsViewController.swift */,
+				68E140161FFD2EEE0082FF92 /* testViewController.swift */,
+				68E140171FFD2EEE0082FF92 /* testViewController.xib */,
+				68E140541FFD34BC0082FF92 /* homeViewController.swift */,
+				68E140551FFD34BC0082FF92 /* homeViewController.xib */,
 				68AA24591FFBF10A0009B001 /* Assets.xcassets */,
+				68F394491FFC8002005675CE /* resultsViewController.swift */,
 				68AA245B1FFBF10A0009B001 /* LaunchScreen.storyboard */,
 				68AA245E1FFBF10A0009B001 /* Info.plist */,
 			);
@@ -189,7 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				68AA245D1FFBF10A0009B001 /* LaunchScreen.storyboard in Resources */,
+				68E140571FFD34BC0082FF92 /* homeViewController.xib in Resources */,
+				68E140591FFD35F60082FF92 /* AttributeTableViewController.xib in Resources */,
 				68AA245A1FFBF10A0009B001 /* Assets.xcassets in Resources */,
+				68E140191FFD2EEE0082FF92 /* testViewController.xib in Resources */,
 				68AA24581FFBF10A0009B001 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68E140561FFD34BC0082FF92 /* homeViewController.swift in Sources */,
+				68E140181FFD2EEE0082FF92 /* testViewController.swift in Sources */,
+				6893B4DD1FFDB7980059A777 /* Katydid.swift in Sources */,
 				68F3944A1FFC8002005675CE /* resultsViewController.swift in Sources */,
 				68AA24771FFC02550009B001 /* Attribute.swift in Sources */,
 				68AA24751FFC01950009B001 /* AttributeTableViewController.swift in Sources */,

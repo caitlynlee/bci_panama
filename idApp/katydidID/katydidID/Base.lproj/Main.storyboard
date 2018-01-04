@@ -12,7 +12,7 @@
         <!--Start-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="StartPage" id="BYZ-38-t0r" userLabel="Start" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Start" customClass="homeViewController" customModule="katydidID" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,21 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8T-dv-zL6">
-                                <rect key="frame" x="16" y="271" width="343" height="101"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHB-cg-nVV">
+                                <rect key="frame" x="80" y="322" width="214" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get characteristics"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTU-kB-C4b">
-                                <rect key="frame" x="16" y="395" width="343" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Find a species"/>
+                                <state key="normal" title="get a species"/>
                                 <connections>
-                                    <segue destination="PlI-Kl-aek" kind="showDetail" action="showViewController:sender:" id="1jt-mQ-GdK"/>
+                                    <action selector="getSpeciesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpR-fx-nKb"/>
+                                    <segue destination="PlI-Kl-aek" kind="show" id="WF7-Ku-Wsq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="whadya want" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-8a-tFX">
-                                <rect key="frame" x="67" y="111" width="240" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-i9-wkd">
+                                <rect key="frame" x="105" y="119" width="164" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -45,6 +41,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="jMR-9y-7ra"/>
+                    <connections>
+                        <outlet property="homeLabel" destination="JgN-i9-wkd" id="ndP-fN-jZD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,14 +87,13 @@
                     <navigationItem key="navigationItem" title="Katydid Attributes" id="kPb-w6-FFv">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="xcK-cA-gtX">
                             <connections>
-                                <action selector="backButton:" destination="O01-WF-eep" id="s53-ts-XBv"/>
-                                <segue destination="MCp-1T-UEw" kind="showDetail" id="8Fg-HJ-qko"/>
+                                <action selector="backButton:" destination="O01-WF-eep" id="WRM-Gm-P0J"/>
+                                <segue destination="MCp-1T-UEw" kind="show" id="pEj-OZ-EwI"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="GO" id="JtO-9c-tq3">
                             <connections>
                                 <action selector="goButton:" destination="O01-WF-eep" id="yaY-Yy-vNg"/>
-                                <segue destination="ed6-iR-WbQ" kind="show" id="FQM-cZ-Zcz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -128,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start over"/>
                                 <connections>
-                                    <segue destination="MCp-1T-UEw" kind="showDetail" id="0ac-cg-GOz"/>
+                                    <action selector="startOverButton:" destination="iTQ-vZ-EGQ" eventType="touchUpInside" id="4bL-80-J6v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,7 +136,6 @@
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="vvI-Ff-BS6">
                             <connections>
                                 <action selector="backButton:" destination="iTQ-vZ-EGQ" id="Nym-gT-soB"/>
-                                <segue destination="PlI-Kl-aek" kind="showDetail" action="showViewController:sender:" id="8ue-Aq-Cw7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -148,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsZ-8X-gZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6447" y="525"/>
+            <point key="canvasLocation" x="6445.6000000000004" y="524.8875562218891"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1cq-bd-wDx">
@@ -186,6 +183,25 @@
             </objects>
             <point key="canvasLocation" x="2758" y="525"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="E1J-xN-IMT">
+            <objects>
+                <viewController id="rRi-hk-nmm" customClass="testViewController" customModule="katydidID" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aee-H3-JbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="lbN-5b-2px"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ffi-8j-fus">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZLf-cN-1as"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRd-4m-z8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5396" y="-273.01349325337333"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="d5t-al-6GK">
             <objects>
@@ -204,9 +220,23 @@
             </objects>
             <point key="canvasLocation" x="5527" y="525"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HxT-GI-FbA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gPx-wh-ECa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LTn-d5-8OM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rRi-hk-nmm" kind="relationship" relationship="rootViewController" id="9nx-F3-Nga"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qu8-XJ-08E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4456.8000000000002" y="-273.01349325337333"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="8ue-Aq-Cw7"/>
-        <segue reference="0ac-cg-GOz"/>
-    </inferredMetricsTieBreakers>
 </document>
