@@ -1,5 +1,5 @@
 //
-//  homeViewController.swift
+//  specificKatydidViewController.swift
 //  katydidID
 //
 //  Created by Caitlyn Lee on 1/4/18.
@@ -8,14 +8,21 @@
 
 import UIKit
 
-class homeViewController: UIViewController {
+class specificKatydidViewController: UIViewController {
 
-    @IBOutlet weak var homeLabel: UILabel!
-
-    @IBOutlet weak var getSpeciesButton: UIButton!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var info: UITextView!
+    
+    var nameText: String = ""
+    var infoText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        name.text = nameText
+        info.text = infoText
+        
+
         // Do any additional setup after loading the view.
     }
 

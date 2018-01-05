@@ -1,3 +1,3 @@
 ## README
 
-A holding place for the work done on BCI
+Various projects and scripts for work done on BCI. 

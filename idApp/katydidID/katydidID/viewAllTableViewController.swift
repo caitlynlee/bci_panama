@@ -1,58 +1,26 @@
 //
-//  AttributeTableViewController.swift
+//  viewAllTableViewController.swift
 //  katydidID
 //
-//  Created by Caitlyn Lee on 1/2/18.
+//  Created by Caitlyn Lee on 1/4/18.
 //  Copyright © 2018 Caitlyn Lee. All rights reserved.
 //
 
 import UIKit
 
-class AttributeTableViewController: UITableViewController {
-    var attributes = [Attribute]()
-    var dict = [String: [Attribute]] ()
-    var choices = [Attribute]()
-    var categories = [String]()
+class viewAllTableViewController: UITableViewController {
     var katydids = [Katydid]()
-    
-    // MARK: Properties
-
-    @IBAction func backButton(_ sender: Any) {
-    }
-    @IBAction func goButton(_ sender: Any) {
-        var count = 1
-        //After clicking "GO", do the actual sorting
-        //let sorted = sortKatydids(traits: choices)
-        
-        sortKatydids(traits: choices)
-        
-        let myVC = testViewController(nibName: "testViewController", bundle: nil)
-        myVC.text = "KATYDIDS: (from most to least likely)\n\n"
-        
-        for k in katydids{
-            myVC.text.append("\(count). \(k.name)\n\n")
-            count += 1
-        }
-        
-        navigationController?.pushViewController(myVC, animated: true)
-    }
-
-    //sections: Face, eyes, pronotum, body, legs, color, size
-    
+    var attributes = [Attribute]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Empty out the choices in case of "back" button
-        choices = []
         
-        //Categories of attributes
-        categories = ["Face", "Eyes", "Pronotum", "Body", "Legs", "Color", "Size"]
- 
-        // load things
+        //Load info
         loadAttributes()
         loadKatydids()
         
-        self.tableView.allowsMultipleSelection = true
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,50 +31,38 @@ class AttributeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return categories.count
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return categories[section]
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let categoryAtt = dict[categories[section]]
-        return (categoryAtt?.count)!
+        return katydids.count
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let att = attributes[indexPath.row]
-        let feature = dict[categories[indexPath.section]]?[indexPath.row]
-        choices.append(feature!)
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        //let att = attributes[indexPath.row]
-        let feature = dict[categories[indexPath.section]]?[indexPath.row]
-        var count = 0
-        
-        for choice in choices{
-            if choice.name == feature?.name{
-                choices.remove(at: count)
-            }
-            count += 1
-        }
-        
-    }
-    
+
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "attributeCell"
+        let cellIdentifier = "katydidCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for: indexPath) as? AttributeTableViewCell else {
-            fatalError("The cell is not an instance of AttributeTableViewCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for: indexPath) as? viewAllTableViewCell else {
+            fatalError("The cell is not an instance of TableViewCell")
         }
         
-        let feature = dict[categories[indexPath.section]]?[indexPath.row]
+        let katydid = katydids[indexPath.row]
         
-        cell.attributeLabel.text = feature?.name
+        cell.katydidNameLabel.text = katydid.name
         
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myVC = specificKatydidViewController(nibName: "specificKatydidViewController", bundle: nil)
+        let katydid = katydids[indexPath.row]
+        
+        myVC.nameText = katydid.name
+        for att in katydid.attributes{
+            myVC.infoText.append("\(att.name), ")
+        }
+        
+        navigationController?.pushViewController(myVC, animated: true)
     }
 
     /*
@@ -153,9 +109,6 @@ class AttributeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    //MARK: Private methods
-    
     private func loadAttributes(){
         guard let attrib1 = Attribute(name: "Green legs", category: "Legs") else{
             fatalError("failed")
@@ -349,14 +302,6 @@ class AttributeTableViewController: UITableViewController {
         
         attributes += [attrib1, attrib2, attrib3, attrib4, attrib5, attrib6, attrib7, attrib8, attrib9, attrib10, attrib11, attrib12, attrib13, attrib14, attrib15, attrib16, attrib17, attrib18, attrib19, attrib20, attrib21, attrib22, attrib23, attrib24, attrib25, attrib26, attrib27, attrib28, attrib29, attrib30, attrib31, attrib32, attrib33, attrib34, attrib35, attrib36, attrib37, attrib38, attrib39, attrib40, attrib41, attrib42, attrib43, attrib44, attrib45, attrib46, attrib47, attrib48, attrib49, attrib50, attrib51, attrib52, attrib53, attrib54, attrib55, attrib56, attrib57, attrib58, attrib59, attrib60, attrib61, attrib62, attrib63]
         
-        for category in categories{
-            dict[category] = []
-        }
-        
-        for att in attributes{
-            dict[att.category]?.append(att)
-        }
-        
     }
     
     private func loadKatydids(){
@@ -536,20 +481,7 @@ class AttributeTableViewController: UITableViewController {
         }
         
         katydids += [k1, k2, k3, k4, k4, k5, k6, k7, k8, k9, k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k40, k41, k42, k43, k44, k45, k46, k47, k48, k49, k50, k51, k52, k53, k54, k55, k56, k57, k58]
-
-    }
-    
-    
-    private func sortKatydids(traits: [Attribute]){
-        for katydid in katydids{
-            katydid.getScore(given: traits)
-        }
-    
-        katydids.sort(by: sortByScore)
-    }
-    
-    private func sortByScore(this: Katydid, that: Katydid)-> Bool {
-        return this.score > that.score
+        
     }
     
 }
