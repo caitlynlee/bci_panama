@@ -13,14 +13,32 @@ class specificKatydidViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var info: UITextView!
+    @IBOutlet weak var notes: UITextView!
+    
+    var katydid: Katydid?
     
     var nameText: String = ""
     var infoText: String = ""
+    var notesText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if katydid != nil{
+            nameText = katydid!.name
+            infoText = "INFO:\n"
+            for att in katydid!.attributes{
+                infoText.append("\(att.name), ")
+            }
+            
+            notesText = katydid!.notes
+        }
+        
         name.text = nameText
         info.text = infoText
+        notes.text = notesText
+        
+        image.image = katydid?.image
         
 
         // Do any additional setup after loading the view.

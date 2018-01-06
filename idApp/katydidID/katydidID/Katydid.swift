@@ -15,6 +15,8 @@ class Katydid {
     var attributes: [Attribute]
     var rarity: Float
     var score: Float
+    var notes: String
+    var image: UIImage
     
     //MARK: Initialization
     init?(name: String, attributes: [Attribute], rarity: Float) {
@@ -22,6 +24,15 @@ class Katydid {
         self.attributes = attributes
         self.rarity = rarity
         self.score = 0
+        self.notes = "Notes:...\n"
+        
+        let test = UIImage(named: self.name)
+        if (test != nil){
+            self.image = test!
+        }
+        else{
+            self.image = #imageLiteral(resourceName: "nophoto")
+        }
     }
     
     func getScore(given: [Attribute]){

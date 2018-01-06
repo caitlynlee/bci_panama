@@ -4,43 +4,52 @@ import os
 idDict = {}
 cwd = os.getcwd()
 
-complete = "testComplete.csv"
-empty = "testIncomplete.csv"
-filled = empty.split(".")[0] + "ALLTHEWAYDONE.csv"
+srcStr = raw_input("Source file: ")
+destStr = raw_input("Destination file:")
+filledStr = destStr.split(".")[0] + "FILLED.csv"
 
-idToSpecies = os.path.join(cwd, complete)
-toBeFilled = os.path.join(cwd, empty)
-filling = os.path.join(cwd, filled)
+srcCol = input("Reference column in source file [0-indexed]: ")
+destCol = input("Reference column in destination file [0-indexed]")
+
+copyColsStr = raw_input("Columns to copy (in source file): ")
+copyCols = [int(x) for x in copyColsStr.split(",")]
+# Optional
+destColsStr = raw_input("Columns to fill (in dest): ")
+destCols = [int(x) for x in destColsStr.split(",")]
+
+# just being safe
+src = os.path.join(cwd, srcStr)
+dest = os.path.join(cwd, destStr)
+filling = os.path.join(cwd, filledStr)
 
 
 data = []
 
-with open(idToSpecies, 'rU') as completeFile:
+with open(src, 'rU') as completeFile:
     reader = csv.reader(completeFile)
 
     # if header, uncomment
     header = next(reader)
 
     for row in reader:
-        #str.rstrip(row[0])
-        # 0 should be replaced by column of ID# - 1
-        # 1 should be repaced by column of species name - 1
-        idDict[row[0]] = row[1]
+        str.rstrip(row[srcCol])
+        idDict[row[srcCol]] = [row[x] for x in copyCols]
 
-with open(toBeFilled) as emptyFile:
+with open(dest) as emptyFile:
     reader = csv.reader(emptyFile)
 
     # if header, uncomment
     header = next(reader)
 
     for row in reader:
-        # again 0 is the column # of ID# -1
-        if row[0] not in idDict:
-            print "id " + str(row[0]) + " not found in complete spreadsheet"
+        if row[destCol] not in idDict:
+            print "id " + str(row[destCol]) + " not found in complete spreadsheet"
         else:
-            # 4 is the column in the unfilled spreadhsheet where the name
-            # should go ( again subtract 1)
-            row[4] = idDict[row[0]]
+            count = 0
+            for elem in idDict[row[destCol]]:
+                row[destCols[count]] = elem
+                count += 1
+
         data.append(row)
 
 with open(filling, 'w') as emptyFile:
@@ -48,6 +57,3 @@ with open(filling, 'w') as emptyFile:
 
     for line in data:
         writer.writerow(line)
-
-    #if header, uncomment
-    #header = next(writer)

@@ -49,18 +49,14 @@ class viewAllTableViewController: UITableViewController {
         let katydid = katydids[indexPath.row]
         
         cell.katydidNameLabel.text = katydid.name
+        cell.katydidImage.image = katydid.image
         
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let myVC = specificKatydidViewController(nibName: "specificKatydidViewController", bundle: nil)
-        let katydid = katydids[indexPath.row]
-        
-        myVC.nameText = katydid.name
-        for att in katydid.attributes{
-            myVC.infoText.append("\(att.name), ")
-        }
+        myVC.katydid = katydids[indexPath.row]
         
         navigationController?.pushViewController(myVC, animated: true)
     }
@@ -350,10 +346,10 @@ class viewAllTableViewController: UITableViewController {
         guard let k15 = Katydid(name: "Caulopsis spp", attributes: [attributes[55], attributes[5]], rarity: -1)else{
             fatalError("failed")
         }
-        guard let k16 = Katydid(name: "Ceraia panamensis", attributes: [attributes[12], attributes[54], attributes[56]], rarity: -1)else{
+        guard let k16 = Katydid(name: "Ceraia mytra", attributes: [attributes[12], attributes[54]], rarity: 1)else{
             fatalError("failed")
         }
-        guard let k17 = Katydid(name: "Ceraia tibialoides", attributes: [attributes[56]], rarity: -2)else{
+        guard let k17 = Katydid(name: "Ceraia panamensis", attributes: [attributes[12], attributes[54], attributes[56]], rarity: -1)else{
             fatalError("failed")
         }
         guard let k18 = Katydid(name: "Chloroscirtus discocercus", attributes: [attributes[14], attributes[4], attributes[13]], rarity: 1)else{
@@ -389,7 +385,7 @@ class viewAllTableViewController: UITableViewController {
         guard let k28 = Katydid(name: "Euceraia insignis", attributes: [attributes[59], attributes[27], attributes[26]], rarity: 1)else{
             fatalError("failed")
         }
-        guard let k29 = Katydid(name: "Hyperphorna irregularis", attributes: [attributes[28], attributes[4]], rarity: 1)else{
+        guard let k29 = Katydid(name: "Hyperphrona irregularis", attributes: [attributes[28], attributes[4]], rarity: 1)else{
             fatalError("failed")
         }
         guard let k30 = Katydid(name: "Idiarthron spp.", attributes: [attributes[6], attributes[10], attributes[57]], rarity: -1)else{
@@ -422,7 +418,7 @@ class viewAllTableViewController: UITableViewController {
         guard let k39 = Katydid(name: "Montezumina bradleyi bradleyi", attributes: [attributes[2], attributes[4], attributes[35], attributes[36], attributes[37]], rarity: 1)else{
             fatalError("failed")
         }
-        guard let k40 = Katydid(name: "Neoconocephalus affins", attributes: [attributes[4], attributes[10], attributes[38]], rarity: -1)else{
+        guard let k40 = Katydid(name: "Neoconocephalus affinis", attributes: [attributes[4], attributes[10], attributes[38]], rarity: -1)else{
             fatalError("failed")
         }
         guard let k41 = Katydid(name: "Orophus conspersus", attributes: [attributes[14], attributes[10]], rarity: 1)else{
@@ -480,7 +476,7 @@ class viewAllTableViewController: UITableViewController {
             fatalError("failed")
         }
         
-        katydids += [k1, k2, k3, k4, k4, k5, k6, k7, k8, k9, k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k40, k41, k42, k43, k44, k45, k46, k47, k48, k49, k50, k51, k52, k53, k54, k55, k56, k57, k58]
+        katydids += [k1, k2, k3, k4, k5, k6, k7, k8, k9, k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k40, k41, k42, k43, k44, k45, k46, k47, k48, k49, k50, k51, k52, k53, k54, k55, k56, k57, k58]
         
     }
     

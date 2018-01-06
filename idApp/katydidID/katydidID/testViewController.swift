@@ -9,13 +9,18 @@
 import UIKit
 
 class testViewController: UIViewController {
-
     @IBOutlet weak var resultsField: UITextView!
+    @IBAction func startOverButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let home = storyboard.instantiateViewController(withIdentifier: "homeScreen") as! homeViewController
+        navigationController?.present(home, animated: true)
+    }
     
     var text: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
         resultsField.text = text
         
