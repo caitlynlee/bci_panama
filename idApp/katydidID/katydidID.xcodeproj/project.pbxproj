@@ -22,6 +22,8 @@
 		68AA24731FFBF1950009B001 /* AttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24721FFBF1950009B001 /* AttributeTableViewCell.swift */; };
 		68AA24751FFC01950009B001 /* AttributeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24741FFC01950009B001 /* AttributeTableViewController.swift */; };
 		68AA24771FFC02550009B001 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24761FFC02540009B001 /* Attribute.swift */; };
+		68D3E5F12001AC54008EB16E /* addNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3E5EF2001AC54008EB16E /* addNoteViewController.swift */; };
+		68D3E5F22001AC54008EB16E /* addNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D3E5F02001AC54008EB16E /* addNoteViewController.xib */; };
 		68E140181FFD2EEE0082FF92 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E140161FFD2EEE0082FF92 /* testViewController.swift */; };
 		68E140191FFD2EEE0082FF92 /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E140171FFD2EEE0082FF92 /* testViewController.xib */; };
 		68E140591FFD35F60082FF92 /* AttributeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E140581FFD35F60082FF92 /* AttributeTableViewController.xib */; };
@@ -58,6 +60,8 @@
 		68AA24721FFBF1950009B001 /* AttributeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewCell.swift; sourceTree = "<group>"; };
 		68AA24741FFC01950009B001 /* AttributeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewController.swift; sourceTree = "<group>"; };
 		68AA24761FFC02540009B001 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		68D3E5EF2001AC54008EB16E /* addNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNoteViewController.swift; sourceTree = "<group>"; };
+		68D3E5F02001AC54008EB16E /* addNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addNoteViewController.xib; sourceTree = "<group>"; };
 		68E140161FFD2EEE0082FF92 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		68E140171FFD2EEE0082FF92 /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
 		68E140581FFD35F60082FF92 /* AttributeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeTableViewController.xib; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				684BED341FFED49100F0DDCA /* viewAllTableViewCell.swift */,
 				684BED301FFED47000F0DDCA /* viewAllTableViewController.swift */,
 				684BED311FFED47000F0DDCA /* viewAllTableViewController.xib */,
+				68D3E5EF2001AC54008EB16E /* addNoteViewController.swift */,
+				68D3E5F02001AC54008EB16E /* addNoteViewController.xib */,
 				68E140161FFD2EEE0082FF92 /* testViewController.swift */,
 				68E140171FFD2EEE0082FF92 /* testViewController.xib */,
 				68AA24591FFBF10A0009B001 /* Assets.xcassets */,
@@ -180,7 +186,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Caitlyn Lee";
 				TargetAttributes = {
 					68AA244E1FFBF10A0009B001 = {
@@ -221,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D3E5F22001AC54008EB16E /* addNoteViewController.xib in Resources */,
 				68AA245D1FFBF10A0009B001 /* LaunchScreen.storyboard in Resources */,
 				684BED391FFED9BC00F0DDCA /* specificKatydidViewController.xib in Resources */,
 				68E140591FFD35F60082FF92 /* AttributeTableViewController.xib in Resources */,
@@ -249,6 +256,7 @@
 				684BED381FFED9BC00F0DDCA /* specificKatydidViewController.swift in Sources */,
 				68E140181FFD2EEE0082FF92 /* testViewController.swift in Sources */,
 				684BED321FFED47000F0DDCA /* viewAllTableViewController.swift in Sources */,
+				68D3E5F12001AC54008EB16E /* addNoteViewController.swift in Sources */,
 				6893B4DD1FFDB7980059A777 /* Katydid.swift in Sources */,
 				68F3944A1FFC8002005675CE /* resultsViewController.swift in Sources */,
 				684BED2F1FFECD2900F0DDCA /* homeViewController.swift in Sources */,
@@ -307,7 +315,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -315,7 +325,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -358,7 +372,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -366,7 +382,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

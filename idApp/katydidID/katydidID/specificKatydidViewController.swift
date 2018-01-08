@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class specificKatydidViewController: UIViewController {
 
@@ -14,7 +15,17 @@ class specificKatydidViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var info: UITextView!
     @IBOutlet weak var notes: UITextView!
+    @IBOutlet weak var addNote: UIButton!
     
+    @IBAction func addNote(_ sender: Any) {
+        let myVC = addNoteViewController(nibName: "addNoteViewController", bundle: nil)
+        myVC.katydids = katydids
+        myVC.index = index
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    var index = Int()
+    var katydids = [Katydid]()
     var katydid: Katydid?
     
     var nameText: String = ""
@@ -23,13 +34,19 @@ class specificKatydidViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //saveKatydids()
+        // navigationController?.setNavigationBarHidden(true, animated: true)
+        // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        katydids = loadKatydids()!
         
-        if katydid != nil{
-            nameText = katydid!.name
-            infoText = "INFO:\n"
-            for att in katydid!.attributes{
-                infoText.append("\(att.name), ")
-            }
+        katydid = katydids[index]
+        nameText = katydid!.name
+        infoText = "INFO:\n"
+        for att in katydid!.attributes{
+            infoText.append("\(att.name), ")
             
             notesText = katydid!.notes
         }
@@ -39,17 +56,25 @@ class specificKatydidViewController: UIViewController {
         notes.text = notesText
         
         image.image = katydid?.image
-        
-
-        // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    private func saveKatydids() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(katydids, toFile: Katydid.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
 
+    private func loadKatydids() -> [Katydid]?  {
+        print("loading")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Katydid.ArchiveURL.path) as? [Katydid]
+    }
     /*
     // MARK: - Navigation
 

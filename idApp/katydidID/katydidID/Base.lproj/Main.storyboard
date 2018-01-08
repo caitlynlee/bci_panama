@@ -33,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="view all katydids"/>
                                 <connections>
-                                    <segue destination="SYH-qf-STs" kind="showDetail" id="kEf-q6-7Se"/>
+                                    <segue destination="SYH-qf-STs" kind="show" action="showDetailViewController:sender:" id="kEf-q6-7Se"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHB-cg-nVV">
@@ -63,13 +63,13 @@
         <!--View All Table View Controller-->
         <scene sceneID="zyk-ki-3me">
             <objects>
-                <tableViewController id="sef-eJ-luD" customClass="viewAllTableViewController" customModule="katydidID" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="listTable" id="sef-eJ-luD" customClass="viewAllTableViewController" customModule="katydidID" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U2p-gY-j6f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="katydidCell" rowHeight="75" id="GSL-vJ-kLV" customClass="viewAllTableViewCell" customModule="katydidID" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="katydidCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="katydidCell" rowHeight="75" id="GSL-vJ-kLV" customClass="viewAllTableViewCell" customModule="katydidID" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GSL-vJ-kLV" id="IIS-hR-7Aj">
@@ -107,6 +107,7 @@
                     <navigationItem key="navigationItem" id="bBL-XI-5b1">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="4nv-Ed-SoG">
                             <connections>
+                                <action selector="backButton:" destination="sef-eJ-luD" id="l1S-j6-qgp"/>
                                 <segue destination="MCp-1T-UEw" kind="show" id="XSt-6h-FKN"/>
                             </connections>
                         </barButtonItem>
