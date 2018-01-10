@@ -18,6 +18,7 @@ class Katydid: NSObject, NSCoding{
     var score: Float
     var notes: String
     var image: UIImage
+    var index: Int
     
     //MARK: Archiving Paths
     
@@ -28,6 +29,7 @@ class Katydid: NSObject, NSCoding{
     struct PropertyKey {
         static let name = "name"
         static let attributes = "attributes"
+        static let index = "index"
         static let rarity = "rarity"
         static let score = "score"
         static let notes = "notes"
@@ -35,12 +37,13 @@ class Katydid: NSObject, NSCoding{
     }
     
     //MARK: Initialization
-    init?(name: String, attributes: [Attribute], rarity: Float, notes: String = "Notes:\n") {
+    init?(name: String, attributes: [Attribute], index: Int, rarity: Float, notes: String = "Notes:\n") {
         self.name = name
         self.attributes = attributes
         self.rarity = rarity
         self.score = 0
         self.notes = notes
+        self.index = index
         
         let test = UIImage(named: self.name)
         if (test != nil){
@@ -68,6 +71,7 @@ class Katydid: NSObject, NSCoding{
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(attributes, forKey: PropertyKey.attributes)
+        aCoder.encode(index, forKey: PropertyKey.index)
         aCoder.encode(rarity, forKey: PropertyKey.rarity)
         //aCoder.encode(score, forKey: PropertyKey.score)
         aCoder.encode(notes, forKey: PropertyKey.notes)
@@ -77,9 +81,11 @@ class Katydid: NSObject, NSCoding{
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String
         let attributes = aDecoder.decodeObject(forKey: PropertyKey.attributes) as? [Attribute]
+        let index = aDecoder.decodeInteger(forKey: PropertyKey.index) as Int
         let rarity = aDecoder.decodeFloat(forKey: PropertyKey.rarity)
         
         let notes = aDecoder.decodeObject(forKey: PropertyKey.notes) as? String
+        
         /*
         let score = aDecoder.decodeFloat(forKey: PropertyKey.score)
         
@@ -87,7 +93,7 @@ class Katydid: NSObject, NSCoding{
         */
         
         // Must call designated initializer.
-        self.init(name: name!, attributes: attributes!, rarity: rarity, notes: notes!)
+        self.init(name: name!, attributes: attributes!, index: index, rarity: rarity, notes: notes!)
         
     }
     

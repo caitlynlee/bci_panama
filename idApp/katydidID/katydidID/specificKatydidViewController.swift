@@ -35,7 +35,7 @@ class specificKatydidViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //saveKatydids()
-        // navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
 

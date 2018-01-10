@@ -57,7 +57,6 @@ class viewAllTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let myVC = specificKatydidViewController(nibName: "specificKatydidViewController", bundle: nil)
-        //myVC.katydid = katydids[indexPath.row]
         myVC.index = indexPath.row
         navigationController?.pushViewController(myVC, animated: true)
     }

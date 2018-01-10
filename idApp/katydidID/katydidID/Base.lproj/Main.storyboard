@@ -170,51 +170,6 @@
             </objects>
             <point key="canvasLocation" x="3702" y="525"/>
         </scene>
-        <!--Katydid-->
-        <scene sceneID="MhA-NV-feD">
-            <objects>
-                <viewController storyboardIdentifier="resultsViewController" title="Katydid" id="iTQ-vZ-EGQ" customClass="resultsViewController" customModule="katydidID" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kAt-SH-gQR"/>
-                        <viewControllerLayoutGuide type="bottom" id="bJd-AG-VCk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jLr-aS-Xjw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOME RESULTING KATYDID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDj-YM-XPQ">
-                                <rect key="frame" x="46" y="244" width="283" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-z0-kYi">
-                                <rect key="frame" x="115" y="571" width="144" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start over"/>
-                                <connections>
-                                    <action selector="startOverButton:" destination="iTQ-vZ-EGQ" eventType="touchUpInside" id="4bL-80-J6v"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Result" id="vXS-Ce-eTT">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="vvI-Ff-BS6">
-                            <connections>
-                                <action selector="backButton:" destination="iTQ-vZ-EGQ" id="Nym-gT-soB"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="resultsLabel" destination="TDj-YM-XPQ" id="DQh-MQ-g8n"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EsZ-8X-gZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6445.6000000000004" y="524.8875562218891"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="1cq-bd-wDx">
             <objects>
@@ -269,24 +224,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRd-4m-z8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5396" y="-273.01349325337333"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="d5t-al-6GK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ed6-iR-WbQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eUx-eM-0Mv">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iTQ-vZ-EGQ" kind="relationship" relationship="rootViewController" id="a1c-tr-qmn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2LR-N2-yRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5527" y="525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HxT-GI-FbA">

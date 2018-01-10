@@ -29,6 +29,7 @@ class homeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         if let attributesLOAD = loadAttributes(){
             print("loaded att")
             loadedAttributes = attributesLOAD
@@ -44,6 +45,9 @@ class homeViewController: UIViewController {
         else{
             saveKatydids()
         }
+        */
+        saveAttributes()
+        saveKatydids()
     
     }
 
@@ -260,178 +264,178 @@ class homeViewController: UIViewController {
     }
     
     private func saveKatydids(){
-        guard let k1 = Katydid(name: "Acanthodis curvidens", attributes: [attributes[6], attributes[8]], rarity: -2)else{
+        guard let k1 = Katydid(name: "Acanthodis curvidens", attributes: [attributes[6], attributes[8]], index: 0, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k2 = Katydid(name: "Aegimia sp1", attributes: [attributes[0]], rarity: -1)else{
+        guard let k2 = Katydid(name: "Aegimia sp1", attributes: [attributes[0]], index: 1, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k3 = Katydid(name: "Agracia festae", attributes: [attributes[2], attributes[3], attributes[4], attributes[5]], rarity: 0)else{
+        guard let k3 = Katydid(name: "Agracia festae", attributes: [attributes[2], attributes[3], attributes[4], attributes[5]], index: 2, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k4 = Katydid(name: "Anapolisia colosseum", attributes: [attributes[1]], rarity: 1)else{
+        guard let k4 = Katydid(name: "Anapolisia colosseum", attributes: [attributes[1]], index: 3, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k5 = Katydid(name: "Anaulacomera bronco", attributes: [attributes[6], attributes[4], attributes[7]], rarity: -1)else{
+        guard let k5 = Katydid(name: "Anaulacomera bronco", attributes: [attributes[6], attributes[4], attributes[7]], index: 4, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k6 = Katydid(name: "Anaulacomera darwinii", attributes: [attributes[2], attributes[4], attributes[50]], rarity: 1)else{
+        guard let k6 = Katydid(name: "Anaulacomera darwinii", attributes: [attributes[2], attributes[4], attributes[50]], index: 5, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k7 = Katydid(name: "Anaulacomera furcata", attributes: [attributes[2], attributes[4], attributes[51]], rarity: 2)else{
+        guard let k7 = Katydid(name: "Anaulacomera furcata", attributes: [attributes[2], attributes[4], attributes[51]], index: 6, rarity: 2)else{
             fatalError("failed")
         }
-        guard let k8 = Katydid(name: "Anaulacomera goat", attributes: [attributes[2], attributes[4], attributes[9]], rarity: 0)else{
+        guard let k8 = Katydid(name: "Anaulacomera goat", attributes: [attributes[2], attributes[4], attributes[9]], index: 7, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k9 = Katydid(name: "Arota festae", attributes: [attributes[3], attributes[4], attributes[14]], rarity: 1)else{
+        guard let k9 = Katydid(name: "Arota festae", attributes: [attributes[3], attributes[4], attributes[14]], index: 8, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k10 = Katydid(name: "Arota panamae", attributes: [attributes[3], attributes[4], attributes[14], attributes[52]], rarity: 1)else{
+        guard let k10 = Katydid(name: "Arota panamae", attributes: [attributes[3], attributes[4], attributes[14], attributes[52]], index: 9, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k11 = Katydid(name: "Eppia truncatipennis", attributes: [attributes[5]], rarity: -2)else{
+        guard let k11 = Katydid(name: "Eppia truncatipennis", attributes: [attributes[5]], index: 10, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k12 = Katydid(name: "Balboana tibialis", attributes: [attributes[6], attributes[10], attributes[11], attributes[53]], rarity: -1)else{
+        guard let k12 = Katydid(name: "Balboana tibialis", attributes: [attributes[6], attributes[10], attributes[11], attributes[53]], index: 11, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k13 = Katydid(name: "Bliastes punctifronis", attributes: [attributes[3]], rarity: -2)else{
+        guard let k13 = Katydid(name: "Bliastes punctifronis", attributes: [attributes[3]], index: 12, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k14 = Katydid(name: "Bucrates capitatus", attributes: [attributes[5], attributes[4]], rarity: -2)else{
+        guard let k14 = Katydid(name: "Bucrates capitatus", attributes: [attributes[5], attributes[4]],index: 13,  rarity: -2)else{
             fatalError("failed")
         }
-        guard let k15 = Katydid(name: "Caulopsis spp", attributes: [attributes[55], attributes[5]], rarity: -1)else{
+        guard let k15 = Katydid(name: "Caulopsis spp", attributes: [attributes[55], attributes[5]], index: 14, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k16 = Katydid(name: "Ceraia mytra", attributes: [attributes[12], attributes[54]], rarity: 1)else{
+        guard let k16 = Katydid(name: "Ceraia mytra", attributes: [attributes[12], attributes[54]], index: 15, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k17 = Katydid(name: "Ceraia panamensis", attributes: [attributes[12], attributes[54], attributes[56]], rarity: -1)else{
+        guard let k17 = Katydid(name: "Ceraia panamensis", attributes: [attributes[12], attributes[54], attributes[56]], index: 16, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k18 = Katydid(name: "Chloroscirtus discocercus", attributes: [attributes[14], attributes[4], attributes[13]], rarity: 1)else{
+        guard let k18 = Katydid(name: "Chloroscirtus discocercus", attributes: [attributes[14], attributes[4], attributes[13]], index: 17, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k19 = Katydid(name: "Cnemidophyllum eximium", attributes: [attributes[6], attributes[4], attributes[58]], rarity: -2)else{
+        guard let k19 = Katydid(name: "Cnemidophyllum eximium", attributes: [attributes[6], attributes[4], attributes[58]], index: 18, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k20 = Katydid(name: "Coconotus wheeleri", attributes: [attributes[57], attributes[16], attributes[17]], rarity: 0)else{
+        guard let k20 = Katydid(name: "Coconotus wheeleri", attributes: [attributes[57], attributes[16], attributes[17]], index: 19, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k21 = Katydid(name: "Copiphora brevirostris", attributes: [attributes[6], attributes[4], attributes[5], attributes[18]], rarity: 0)else{
+        guard let k21 = Katydid(name: "Copiphora brevirostris", attributes: [attributes[6], attributes[4], attributes[5], attributes[18]], index: 20, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k22 = Katydid(name: "Docidocercus gigliotosi", attributes: [attributes[19], attributes[57]], rarity: 0)else{
+        guard let k22 = Katydid(name: "Docidocercus gigliotosi", attributes: [attributes[19], attributes[57]], index: 21, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k23 = Katydid(name: "Dolichocercus latipennis", attributes: [attributes[2], attributes[10], attributes[20]], rarity: 1)else{
+        guard let k23 = Katydid(name: "Dolichocercus latipennis", attributes: [attributes[2], attributes[10], attributes[20]], index: 22, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k24 = Katydid(name: "Ectemna dumicola", attributes: [attributes[15], attributes[4], attributes[21]], rarity: 0)else{
+        guard let k24 = Katydid(name: "Ectemna dumicola", attributes: [attributes[15], attributes[4], attributes[21]], index: 23, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k25 = Katydid(name: "Erioloides longinoi", attributes: [attributes[22], attributes[23]], rarity: 0)else{
+        guard let k25 = Katydid(name: "Erioloides longinoi", attributes: [attributes[22], attributes[23]],index: 24,  rarity: 0)else{
             fatalError("failed")
         }
-        guard let k26 = Katydid(name: "Eubliastes pollonerae", attributes: [attributes[57], attributes[24]], rarity: -1)else{
+        guard let k26 = Katydid(name: "Eubliastes pollonerae", attributes: [attributes[57], attributes[24]],index: 25,  rarity: -1)else{
             fatalError("failed")
         }
-        guard let k27 = Katydid(name: "Euceraia atrix", attributes: [attributes[25]], rarity: 1)else{
+        guard let k27 = Katydid(name: "Euceraia atrix", attributes: [attributes[25]], index: 26, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k28 = Katydid(name: "Euceraia insignis", attributes: [attributes[59], attributes[27], attributes[26]], rarity: 1)else{
+        guard let k28 = Katydid(name: "Euceraia insignis", attributes: [attributes[59], attributes[27], attributes[26]], index: 27, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k29 = Katydid(name: "Hyperphrona irregularis", attributes: [attributes[28], attributes[4]], rarity: 1)else{
+        guard let k29 = Katydid(name: "Hyperphrona irregularis", attributes: [attributes[28], attributes[4]], index: 28, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k30 = Katydid(name: "Idiarthron spp.", attributes: [attributes[6], attributes[10], attributes[57]], rarity: -1)else{
+        guard let k30 = Katydid(name: "Idiarthron spp.", attributes: [attributes[6], attributes[10], attributes[57]], index: 29, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k31 = Katydid(name: "Ischnomela gracilis", attributes: [attributes[55], attributes[57], attributes[29], attributes[30]], rarity: -1)else{
+        guard let k31 = Katydid(name: "Ischnomela gracilis", attributes: [attributes[55], attributes[57], attributes[29], attributes[30]], index: 30, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k32 = Katydid(name: "Itarissa costaricensis", attributes: [attributes[31]], rarity: 0)else{
+        guard let k32 = Katydid(name: "Itarissa costaricensis", attributes: [attributes[31]], index: 31, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k33 = Katydid(name: "Itarissa sunrise", attributes: [attributes[32]], rarity: 0)else{
+        guard let k33 = Katydid(name: "Itarissa sunrise", attributes: [attributes[32]], index: 32, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k34 = Katydid(name: "Lamprophyllum bugabae", attributes: [attributes[6], attributes[4], attributes[33]], rarity: 1)else{
+        guard let k34 = Katydid(name: "Lamprophyllum bugabae", attributes: [attributes[6], attributes[4], attributes[33]], index: 33, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k35 = Katydid(name: "Lamprophyllum micans", attributes: [attributes[14], attributes[34]], rarity: 1)else{
+        guard let k35 = Katydid(name: "Lamprophyllum micans", attributes: [attributes[14], attributes[34]],index: 34,  rarity: 1)else{
             fatalError("failed")
         }
-        guard let k36 = Katydid(name: "Microcentrum sp1", attributes: [attributes[14], attributes[6], attributes[4]], rarity: 0)else{
+        guard let k36 = Katydid(name: "Microcentrum sp1", attributes: [attributes[14], attributes[6], attributes[4]], index: 35, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k37 = Katydid(name: "Microcentrum dino", attributes: [attributes[4]], rarity: 1)else{
+        guard let k37 = Katydid(name: "Microcentrum dino", attributes: [attributes[4]], index: 36, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k38 = Katydid(name: "Microcentrum polka", attributes: [attributes[14], attributes[6], attributes[4]], rarity: 1)else{
+        guard let k38 = Katydid(name: "Microcentrum polka", attributes: [attributes[14], attributes[6], attributes[4]], index: 37, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k39 = Katydid(name: "Montezumina bradleyi bradleyi", attributes: [attributes[2], attributes[4], attributes[35], attributes[36], attributes[37]], rarity: 1)else{
+        guard let k39 = Katydid(name: "Montezumina bradleyi bradleyi", attributes: [attributes[2], attributes[4], attributes[35], attributes[36], attributes[37]], index: 38, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k40 = Katydid(name: "Neoconocephalus affinis", attributes: [attributes[4], attributes[10], attributes[38]], rarity: -1)else{
+        guard let k40 = Katydid(name: "Neoconocephalus affinis", attributes: [attributes[4], attributes[10], attributes[38]], index: 39, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k41 = Katydid(name: "Orophus conspersus", attributes: [attributes[14], attributes[10]], rarity: 1)else{
+        guard let k41 = Katydid(name: "Orophus conspersus", attributes: [attributes[14], attributes[10]],index: 40, rarity: 1)else{
             fatalError("failed")
         }
-        guard let k42 = Katydid(name: "Philophyllia guttulata", attributes: [attributes[6], attributes[4], attributes[40]], rarity: -1)else{
+        guard let k42 = Katydid(name: "Philophyllia guttulata", attributes: [attributes[6], attributes[4], attributes[40]], index: 41, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k43 = Katydid(name: "Philophyllia ingens", attributes: [attributes[6], attributes[4], attributes[41]], rarity: 0)else{
+        guard let k43 = Katydid(name: "Philophyllia ingens", attributes: [attributes[6], attributes[4], attributes[41]], index: 42, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k44 = Katydid(name: "Phlugis sp", attributes: [attributes[8], attributes[2]], rarity: -2)else{
+        guard let k44 = Katydid(name: "Phlugis sp", attributes: [attributes[8], attributes[2]], index: 43, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k45 = Katydid(name: "Phylloptera dimidiata", attributes: [attributes[42], attributes[34]], rarity: 1)else{
+        guard let k45 = Katydid(name: "Phylloptera dimidiata", attributes: [attributes[42], attributes[34]],index: 44,  rarity: 1)else{
             fatalError("failed")
         }
-        guard let k46 = Katydid(name: "Phylloptera quinquemaculata", attributes: [attributes[34], attributes[3], attributes[43]], rarity: 0)else{
+        guard let k46 = Katydid(name: "Phylloptera quinquemaculata", attributes: [attributes[34], attributes[3], attributes[43]], index: 45, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k47 = Katydid(name: "Pristonotus sp", attributes: [attributes[6], attributes[10], attributes[57], attributes[41]], rarity: -1)else{
+        guard let k47 = Katydid(name: "Pristonotus sp", attributes: [attributes[6], attributes[10], attributes[57], attributes[41]], index: 46, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k48 = Katydid(name: "Pycnopalpa bicordata", attributes: [attributes[2], attributes[44], attributes[45], attributes[46]], rarity: 0)else{
+        guard let k48 = Katydid(name: "Pycnopalpa bicordata", attributes: [attributes[2], attributes[44], attributes[45], attributes[46]], index: 47, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k49 = Katydid(name: "Pycnopalpa sincordata", attributes: [attributes[2], attributes[44], attributes[45]], rarity: 0)else{
+        guard let k49 = Katydid(name: "Pycnopalpa sincordata", attributes: [attributes[2], attributes[44], attributes[45]], index: 48, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k50 = Katydid(name: "Scopiorinus fragilis", attributes: [attributes[2], attributes[4], attributes[57]], rarity: -1)else{
+        guard let k50 = Katydid(name: "Scopiorinus fragilis", attributes: [attributes[2], attributes[4], attributes[57]], index: 49, rarity: -1)else{
             fatalError("failed")
         }
-        guard let k51 = Katydid(name: "Steirodon careovirgulatum", attributes: [attributes[6], attributes[4], attributes[47]], rarity: 0)else{
+        guard let k51 = Katydid(name: "Steirodon careovirgulatum", attributes: [attributes[6], attributes[4], attributes[47]], index: 50, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k52 = Katydid(name: "Steirodon robertsorum", attributes: [attributes[4], attributes[6], attributes[60]], rarity: -2)else{
+        guard let k52 = Katydid(name: "Steirodon robertsorum", attributes: [attributes[4], attributes[6], attributes[60]], index: 51, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k53 = Katydid(name: "Steirodon sandrae", attributes: [attributes[4], attributes[6], attributes[60]], rarity: -2)else{
+        guard let k53 = Katydid(name: "Steirodon sandrae", attributes: [attributes[4], attributes[6], attributes[60]], index: 52, rarity: -2)else{
             fatalError("failed")
         }
-        guard let k54 = Katydid(name: "Steirodon stalii", attributes: [attributes[6], attributes[4], attributes[61]], rarity: 0)else{
+        guard let k54 = Katydid(name: "Steirodon stalii", attributes: [attributes[6], attributes[4], attributes[61]], index: 53, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k55 = Katydid(name: "Subria sylvestris", attributes: [attributes[10], attributes[4], attributes[52]], rarity: 0)else{
+        guard let k55 = Katydid(name: "Subria sylvestris", attributes: [attributes[10], attributes[4], attributes[52]], index: 54, rarity: 0)else{
             fatalError("failed")
         }
-        guard let k56 = Katydid(name: "Baliophyllum", attributes: [attributes[2], attributes[10], attributes[57], attributes[49]], rarity: 2)else{
+        guard let k56 = Katydid(name: "Baliophyllum", attributes: [attributes[2], attributes[10], attributes[57], attributes[49]], index: 55, rarity: 2)else{
             fatalError("failed")
         }
-        guard let k57 = Katydid(name: "Viadana zetterstedti", attributes: [attributes[24], attributes[62]], rarity: 1)else{
+        guard let k57 = Katydid(name: "Viadana zetterstedti", attributes: [attributes[24], attributes[62]],index: 56,  rarity: 1)else{
             fatalError("failed")
         }
-        guard let k58 = Katydid(name: "Waxy katydid", attributes: [attributes[2], attributes[4]], rarity: 1) else{
+        guard let k58 = Katydid(name: "Waxy katydid", attributes: [attributes[2], attributes[4]], index: 57, rarity: 1) else{
             fatalError("failed")
         }
         
