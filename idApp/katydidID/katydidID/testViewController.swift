@@ -26,18 +26,26 @@ class testViewController: UIViewController {
         let screenWidth = screensize.width
         let screenHeight = screensize.height
         let scrollView: UIScrollView!
-        scrollView = UIScrollView(frame: CGRect(x: screenWidth*0.05, y: 20, width: screenWidth*0.95, height: screenHeight))
+        scrollView = UIScrollView(frame: CGRect(x: screenWidth*0.05, y: screenHeight*0.14, width: screenWidth*0.95, height: screenHeight*0.75))
         view.addSubview(scrollView)
 
-        scrollView.contentSize = CGSize(width: screenWidth*0.95, height: 3000)
+        scrollView.contentSize = CGSize(width: screenWidth*0.95, height: CGFloat((katydids.count)*40))
         
-        var count = 1
+        let title = UILabel(frame: CGRect(x: 0, y:screenHeight*0.08, width: screenWidth, height: 25))
+        title.text = "RESULTS: (from most to least likely)"
+        title.textColor = .black
+        title.font = UIFont.boldSystemFont(ofSize: 14)
+        title.textAlignment = .center
+
+        view.addSubview(title)
+        
+        var count = 0
         for katydid in katydids{
-            let topHeight = CGFloat((count+1)*40)
+            let topHeight = CGFloat(count*40)
             let b = resultButton(frame: CGRect(x:25, y: topHeight, width: screenWidth*0.8, height: 30))
             let num = UILabel(frame: CGRect(x:0, y: topHeight, width: 20, height: 30))
             
-            num.text = "\(count): "
+            num.text = "\(count+1): "
             num.textColor = .black
             num.font = UIFont(name: "Helvetica", size: 14)
             num.textAlignment = .right
@@ -48,7 +56,6 @@ class testViewController: UIViewController {
             b.setTitleColor(view.tintColor , for: .normal)
             b.titleLabel!.font = UIFont(name: "Helvetica", size: 14)
             b.contentHorizontalAlignment = .left
-            //b.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             b.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             b.katydid = katydid
             
@@ -57,7 +64,8 @@ class testViewController: UIViewController {
             
             count += 1
         }
-        scrollView.addSubview(startOver)
+        startOver.frame = CGRect(x: 0, y: screenHeight*0.92, width: screenWidth, height: 30)
+        view.addSubview(startOver)
     }
     
     @objc func buttonAction(sender: resultButton){
@@ -68,17 +76,14 @@ class testViewController: UIViewController {
         navigationController?.pushViewController(myVC, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        
         makeButtons(view: self.view)
         
-        //scrollView.addSubview(resultsField)
-        
-        
-
-        //resultsField.text = text
     }
 
     override func didReceiveMemoryWarning() {
