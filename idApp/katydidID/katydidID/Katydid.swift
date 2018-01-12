@@ -75,7 +75,7 @@ class Katydid: NSObject, NSCoding{
         aCoder.encode(rarity, forKey: PropertyKey.rarity)
         //aCoder.encode(score, forKey: PropertyKey.score)
         aCoder.encode(notes, forKey: PropertyKey.notes)
-        //aCoder.encode(image, forKey: PropertyKey.image)
+        aCoder.encode(image, forKey: PropertyKey.image)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -88,8 +88,6 @@ class Katydid: NSObject, NSCoding{
         
         /*
         let score = aDecoder.decodeFloat(forKey: PropertyKey.score)
-        
-        let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage
         */
         
         // Must call designated initializer.

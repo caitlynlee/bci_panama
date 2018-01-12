@@ -46,8 +46,8 @@ class homeViewController: UIViewController {
             saveKatydids()
         }
         */
-        saveAttributes()
-        saveKatydids()
+        //saveAttributes()
+        //saveKatydids()
     
     }
 

@@ -9,14 +9,15 @@
 import UIKit
 import os.log
 
-class specificKatydidViewController: UIViewController {
+class specificKatydidViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var image: UIImageView!
+    
     @IBOutlet weak var info: UITextView!
     @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var addNote: UIButton!
-    
+    //@IBOutlet weak var image: UIImageView!
+  
     @IBAction func addNote(_ sender: Any) {
         let myVC = addNoteViewController(nibName: "addNoteViewController", bundle: nil)
         myVC.katydids = katydids
@@ -32,13 +33,40 @@ class specificKatydidViewController: UIViewController {
     var infoText: String = ""
     var notesText: String = ""
     
+    var image = UIImageView(frame: CGRect(x: 0, y:0, width: 287, height: 240))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //saveKatydids()
         navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
+        
+        var scrollImg: UIScrollView!
+        
+        scrollImg = UIScrollView(frame: CGRect(x: 44, y:145, width: 287, height: 240))
+        scrollImg.contentSize = CGSize(width: 287, height: 240)
+        scrollImg.delegate = self
+        scrollImg.alwaysBounceVertical = false
+        scrollImg.alwaysBounceHorizontal = false
+        scrollImg.showsVerticalScrollIndicator = true
+        scrollImg.flashScrollIndicators()
+        
+        
+        scrollImg.minimumZoomScale = 1.0
+        scrollImg.maximumZoomScale = 10.0
+        
+        view.addSubview(scrollImg)
+        
+        image.clipsToBounds = false
+        scrollImg.addSubview(image)
+        
     }
-
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return image
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         katydids = loadKatydids()!
         
@@ -54,8 +82,8 @@ class specificKatydidViewController: UIViewController {
         name.text = nameText
         info.text = infoText
         notes.text = notesText
+        image.image = katydid!.image
         
-        image.image = katydid?.image
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,7 +100,7 @@ class specificKatydidViewController: UIViewController {
     }
 
     private func loadKatydids() -> [Katydid]?  {
-        print("loading")
+        print("loaded")
         return NSKeyedUnarchiver.unarchiveObject(withFile: Katydid.ArchiveURL.path) as? [Katydid]
     }
     /*
