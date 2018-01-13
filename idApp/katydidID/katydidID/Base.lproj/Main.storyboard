@@ -21,27 +21,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coverPhoto2" translatesAutoresizingMaskIntoConstraints="NO" id="zUX-Mh-mSp">
+                                <rect key="frame" x="-68" y="0.0" width="510" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KATYDIDS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-i9-wkd">
                                 <rect key="frame" x="105" y="119" width="164" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFG-hJ-eem">
-                                <rect key="frame" x="105" y="457" width="164" height="60"/>
+                                <rect key="frame" x="105" y="530" width="164" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="view all katydids"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="view all katydids">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="SYH-qf-STs" kind="show" action="showDetailViewController:sender:" id="kEf-q6-7Se"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHB-cg-nVV">
-                                <rect key="frame" x="105" y="350" width="165" height="66"/>
+                                <rect key="frame" x="105" y="440" width="165" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="get a species">
-                                    <color key="titleColor" red="0.059480350791778193" green="0.58524935233160624" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="PlI-Kl-aek" kind="show" id="WF7-Ku-Wsq"/>
@@ -54,6 +61,7 @@
                     <connections>
                         <outlet property="getSpeciesButton" destination="OHB-cg-nVV" id="dZs-zq-AdC"/>
                         <outlet property="homeLabel" destination="JgN-i9-wkd" id="sXI-LE-5BY"/>
+                        <outlet property="viewAllButton" destination="nFG-hJ-eem" id="CTd-BT-gWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -263,6 +271,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="coverPhoto2" width="1728" height="2304"/>
         <image name="nophoto" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>

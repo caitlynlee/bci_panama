@@ -12,6 +12,7 @@ class homeViewController: UIViewController {
 
     @IBOutlet weak var homeLabel: UILabel!
 
+    @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var getSpeciesButton: UIButton!
     //var attributes = [Attribute]()
     //var katydids = [Katydid]()
@@ -28,6 +29,9 @@ class homeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         
         /*
         if let attributesLOAD = loadAttributes(){
