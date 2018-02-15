@@ -14,6 +14,11 @@ class homeViewController: UIViewController {
 
     @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var getSpeciesButton: UIButton!
+    @IBAction func getSpeciesButton(_ sender: Any) {
+        print("pressed")
+        let myVC = categoryViewController(nibName: "categoryViewController", bundle: nil)
+        navigationController?.pushViewController(myVC, animated: true)
+    }
     //var attributes = [Attribute]()
     //var katydids = [Katydid]()
     
@@ -29,7 +34,6 @@ class homeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681CFF88200D05A000EFCB5E /* categoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681CFF86200D05A000EFCB5E /* categoryViewController.swift */; };
+		681CFF89200D05A000EFCB5E /* categoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681CFF87200D05A000EFCB5E /* categoryViewController.xib */; };
 		684BED2F1FFECD2900F0DDCA /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BED2E1FFECD2900F0DDCA /* homeViewController.swift */; };
 		684BED321FFED47000F0DDCA /* viewAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684BED301FFED47000F0DDCA /* viewAllTableViewController.swift */; };
 		684BED331FFED47000F0DDCA /* viewAllTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684BED311FFED47000F0DDCA /* viewAllTableViewController.xib */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		681CFF86200D05A000EFCB5E /* categoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryViewController.swift; sourceTree = "<group>"; };
+		681CFF87200D05A000EFCB5E /* categoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = categoryViewController.xib; sourceTree = "<group>"; };
 		684BED2E1FFECD2900F0DDCA /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		684BED301FFED47000F0DDCA /* viewAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewAllTableViewController.swift; sourceTree = "<group>"; };
 		684BED311FFED47000F0DDCA /* viewAllTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = viewAllTableViewController.xib; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				6893B4DC1FFDB7980059A777 /* Katydid.swift */,
 				68E140581FFD35F60082FF92 /* AttributeTableViewController.xib */,
 				68AA24561FFBF10A0009B001 /* Main.storyboard */,
+				681CFF86200D05A000EFCB5E /* categoryViewController.swift */,
+				681CFF87200D05A000EFCB5E /* categoryViewController.xib */,
 				684BED361FFED9BC00F0DDCA /* specificKatydidViewController.swift */,
 				684BED371FFED9BC00F0DDCA /* specificKatydidViewController.xib */,
 				684BED2E1FFECD2900F0DDCA /* homeViewController.swift */,
@@ -234,6 +240,7 @@
 				68AA245A1FFBF10A0009B001 /* Assets.xcassets in Resources */,
 				68E140191FFD2EEE0082FF92 /* testViewController.xib in Resources */,
 				684BED331FFED47000F0DDCA /* viewAllTableViewController.xib in Resources */,
+				681CFF89200D05A000EFCB5E /* categoryViewController.xib in Resources */,
 				68AA24581FFBF10A0009B001 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +265,7 @@
 				684BED321FFED47000F0DDCA /* viewAllTableViewController.swift in Sources */,
 				68D3E5F620068E11008EB16E /* resultButton.swift in Sources */,
 				68D3E5F12001AC54008EB16E /* addNoteViewController.swift in Sources */,
+				681CFF88200D05A000EFCB5E /* categoryViewController.swift in Sources */,
 				6893B4DD1FFDB7980059A777 /* Katydid.swift in Sources */,
 				684BED2F1FFECD2900F0DDCA /* homeViewController.swift in Sources */,
 				68AA24771FFC02550009B001 /* Attribute.swift in Sources */,
