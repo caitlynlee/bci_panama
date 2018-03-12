@@ -22,7 +22,6 @@
 01/27/18 14:39:49 C:\Users\AC2\Desktop\Caitlyn\Playback files\lowFreq\12kHz.wav
 01/27/18 14:40:22 C:\Users\AC2\Desktop\Caitlyn\Playback files\lowFreq\18kHz.wav
 01/27/18 14:40:56 C:\Users\AC2\Desktop\Caitlyn\Playback files\lowFreq\25kHz.wav
-01/27/18 14:41:55 C:\Users\AC2\Desktop\Caitlyn\Playback files\highFreq\65kHz.wav
 01/27/18 14:42:05 C:\Users\AC2\Desktop\Caitlyn\Playback files\highFreq\60kHz.wav
 01/27/18 14:42:39 C:\Users\AC2\Desktop\Caitlyn\Playback files\highFreq\85kHz.wav
 01/27/18 14:43:13 C:\Users\AC2\Desktop\Caitlyn\Playback files\highFreq\90kHz.wav

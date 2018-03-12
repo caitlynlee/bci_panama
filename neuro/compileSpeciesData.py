@@ -24,6 +24,7 @@ def getPlayback(species):
     for insect in os.listdir(playbackdir):
         insectName = insect[:-4]
         if (insectName == species):
+
             order = []
             with open(os.path.join(playbackdir,insect)) as f:
                 for line in f:
@@ -50,7 +51,7 @@ with open('thresholds.csv', 'rU') as csvfile:
             katydids.append(k)
 
 
-with open('sortedThresholds.csv', 'w') as f:
+with open('SORTED.csv', 'w') as f:
     writer = csv.writer(f, delimiter=',')
 
     for katydid in katydids:
